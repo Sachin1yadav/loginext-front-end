@@ -35,7 +35,7 @@ const Userlist = () => {
         <p>Error: {error}</p>
       ) : (
         <div
-          data-aos="fade-down"
+          data-aos="flip-down"
           data-aos-anchor-placement="center-bottom"
           data-aos-duration="3000"
           className="userlistdiv"

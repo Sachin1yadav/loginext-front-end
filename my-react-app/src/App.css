@@ -1,6 +1,7 @@
 .App {
   text-align: center;
 }
+
 /* Import Tailwind CSS base styles */
 @import 'tailwindcss/base';
 
@@ -9,6 +10,11 @@
 
 /* Import Tailwind CSS utility styles */
 @import 'tailwindcss/utilities';
+
+
+
+
+
 input{
   border: 1px solid rgb(181, 179, 179);
   border-radius: 5px;

@@ -6,10 +6,13 @@ import { FaRegHeart } from "react-icons/fa";
 import { CiEdit } from "react-icons/ci";
 import { MdDelete } from "react-icons/md";
 import { useDispatch } from "react-redux";
-import { deleteUseraction, editUseraction } from "../redux/UserProfile/Userprofile.action";
+import {
+  deleteUseraction,
+  editUseraction,
+} from "../redux/UserProfile/Userprofile.action";
 import { MyModal } from "./MyModal";
 import EditForm from "./EditForm";
-import "../App.css"
+import "../App.css";
 import { FaHeart } from "react-icons/fa";
 const UserCord = ({ user }) => {
   const dispatch = useDispatch();
@@ -48,7 +51,6 @@ const UserCord = ({ user }) => {
     setDeleteModalOpen(false);
   };
 
-
   return (
     <>
       <div className="userdiv ">
@@ -81,23 +83,22 @@ const UserCord = ({ user }) => {
           </div>
         </div>
         <div className="usercordactiondiv ">
-        <div
-            onClick={handleLikeClick}
-            className="usercordactionsinglediv1"
-          >
-            {user.IsLink?(<p><FaHeart/></p>):(<p> <FaRegHeart /></p>)}
-           
+          <div onClick={handleLikeClick} className="usercordactionsinglediv1">
+            {user.IsLink ? (
+              <p>
+                <FaHeart />
+              </p>
+            ) : (
+              <p>
+                {" "}
+                <FaRegHeart />
+              </p>
+            )}
           </div>
-          <div
-            onClick={handleEditClick}
-            className="usercordactionsinglediv2"
-          >
+          <div onClick={handleEditClick} className="usercordactionsinglediv2">
             <CiEdit />
           </div>
-          <div
-            onClick={handleDeleteClick}
-            className="usercordactionsinglediv"
-          >
+          <div onClick={handleDeleteClick} className="usercordactionsinglediv">
             <MdDelete />
           </div>
         </div>

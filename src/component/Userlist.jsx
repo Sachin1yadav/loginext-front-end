@@ -28,18 +28,18 @@ const Userlist = () => {
   };
   console.log("loading", loading);
   return (
-    <div className="userlistmaindiv ">
+    <div className="userlistmaindiv " >
       {loading || error? (
        <p><Laoding/></p>
       ) : error ? (
         <p>Error: {error}</p>
       ) : (
         <div
-          
+       
           className="userlistdiv"
         >
           {users?.map((user, index) => (
-            <div className="flex m-auto" key={index}>
+            <div className="flex"  key={index}>
               <UserCord key={index} user={user} />
             </div>
           ))}

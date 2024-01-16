@@ -62,7 +62,7 @@ input {
   position: relative;
   width: 90%;
   min-height: 100vh;
-  margin-top: 50px;
+  
   margin: auto;
 }
 /* flex flex-wrap gap-[20px] w-[100%] border-2 border-red-900 */
@@ -71,8 +71,10 @@ input {
   flex-wrap: wrap;
   gap: 20px;
   width: 100%;
+ 
   margin: auto;
   justify-content: flex-start;
+  align-items: center;
 }
 /* Addbuttondiv fixed bottom-0 right-0 w-[100px] h-[100px] */
 
@@ -143,13 +145,13 @@ input {
   color: red;
 }
 .usercordactionsinglediv2 {
-  border-right: 1px solid gray;
-  border-left: 1px solid gray;
-  padding-left: 12px;
+  border-right: 1px solid rgb(184, 184, 184);
+  border-left: 1px solid rgb(184, 184, 184);
+  padding-left: 24px;
   padding-top: 5px;
   padding-bottom: 5px;
   cursor: pointer;
-  padding-right: 12px;
+  padding-right: 24px;
 }
 
 /* .usercorddetails items-center w-[90%]{} */

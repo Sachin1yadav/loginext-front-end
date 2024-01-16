@@ -7,7 +7,8 @@ function App() {
 
   return (
     <div className="App">
-       
+        <h1 className='casestudy'>CASE STUDY </h1>
+
       <Userlist/> 
      </div>
   );

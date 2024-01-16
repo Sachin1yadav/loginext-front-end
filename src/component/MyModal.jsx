@@ -31,7 +31,7 @@ export function MyModal({
           variant="text"
           color="red"
           onClick={handleOpen}
-          className="mr-1"
+          style={{margin:"10px"}}
         >
           <span>Cancel</span>
         </Button>

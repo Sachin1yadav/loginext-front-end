@@ -156,18 +156,12 @@ const AddForm = ({ handleAddUser, handleModalClose }) => {
             onChange={handleInputChange}
           />
         </div>
-        <div className="addbutton2">
-      <Button
-        variant="gradient" color="green"
-        onClick={handleAddClick}
-      >
-        Add User
-      </Button>
       </div>
+      <div className="addbutton2">
+        <Button variant="gradient" color="green" onClick={handleAddClick}>
+          Add User
+        </Button>
       </div>
-     
-      
-     
     </form>
   );
 };

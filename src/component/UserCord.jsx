@@ -58,9 +58,7 @@ const UserCord = ({ user }) => {
 
   return (
     <>
-      <div  data-aos="flip-down"
-          data-aos-anchor-placement="center-bottom"
-          data-aos-duration="3000" className="userdiv ">
+      <div    className="userdiv ">
         <div className="userdivimg">
           <img
           

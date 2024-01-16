@@ -42,6 +42,7 @@ export const deleteUserError = (error) => ({
 });
 
 export const getUsers = () => async (dispatch) => {
+  dispatch({ type: UserActionTypes.GET_USER_LOADING });
   try {
     const response = await axios.get("https://dent-telling-morning.glitch.me/users/");
     dispatch(getUserSuccess(response.data));
@@ -51,6 +52,7 @@ export const getUsers = () => async (dispatch) => {
 };
 
 export const addUser = (user) => async (dispatch) => {
+  dispatch({ type: UserActionTypes.ADD_USER_LOADING });
   try {
     const response = await axios.post("https://dent-telling-morning.glitch.me/users", user);
     dispatch(addUserSuccess(response.data));
@@ -61,6 +63,7 @@ export const addUser = (user) => async (dispatch) => {
 
 export const editUseraction = (user) => async (dispatch) => {
   console.log("user",user)
+  dispatch({ type: UserActionTypes.EDIT_USER_LOADING });
   try {
     const response = await axios.put(`https://dent-telling-morning.glitch.me/users/${user.id}`, user);
     console.log("response",response)
@@ -71,6 +74,7 @@ export const editUseraction = (user) => async (dispatch) => {
 };
 
 export const deleteUseraction = (userId) => async (dispatch) => {
+  dispatch({ type: UserActionTypes.DELETE_USER_LOADING });
   try {
     await axios.delete(`https://dent-telling-morning.glitch.me/users/${userId}`);
     dispatch(deleteUserSuccess(userId));

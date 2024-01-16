@@ -9,12 +9,13 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import "../App.css";
 import Laoding from "./Loading";
-  
- 
+
 const Userlist = () => {
   const dispatch = useDispatch();
   const [isAddModal, setIsAddModal] = useState(false);
-  const { users, loading, error } = useSelector((state) => state.userProfileReducer);
+  const { users, loading, error } = useSelector(
+    (state) => state.userProfileReducer
+  );
   useEffect(() => {
     AOS.init();
   }, []);
@@ -25,15 +26,20 @@ const Userlist = () => {
   const handleAddUser = (newUser) => {
     dispatch(addUser(newUser));
   };
-
+  console.log("loading", loading);
   return (
     <div className="userlistmaindiv ">
-       {loading ? (
-        <Laoding/>
-        ) : error ? (
+      {loading || error? (
+       <p><Laoding/></p>
+      ) : error ? (
         <p>Error: {error}</p>
       ) : (
-        <div className="userlistdiv">
+        <div
+          data-aos="fade-down"
+          data-aos-anchor-placement="center-bottom"
+          data-aos-duration="3000"
+          className="userlistdiv"
+        >
           {users?.map((user, index) => (
             <div className="flex m-auto" key={index}>
               <UserCord key={index} user={user} />
@@ -41,7 +47,7 @@ const Userlist = () => {
           ))}
         </div>
       )}
-       
+
       <div className="Addbuttondiv  ">
         <div className="addbutton" onClick={() => setIsAddModal(true)}>
           <p>
@@ -60,7 +66,6 @@ const Userlist = () => {
             handleModalClose={() => setIsAddModal(false)}
           />
         )}
-        
       />
     </div>
   );

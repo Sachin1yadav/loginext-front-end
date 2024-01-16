@@ -12,6 +12,7 @@
 # Delete User
 ![image](https://github.com/Sachin1yadav/loginext-front-end/assets/107467689/4e282389-c342-4c33-88c3-edbd150b64cf)
 # Add User
-![image](https://github.com/Sachin1yadav/loginext-front-end/assets/107467689/eb3fd4e7-d5eb-48f2-a4e7-48b96886c5a4)
+![image](https://github.com/Sachin1yadav/loginext-front-end/assets/107467689/0316f2b9-55e5-4f43-88b0-a9e485eabcc7)
+
 
 

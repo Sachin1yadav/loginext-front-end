@@ -3,13 +3,13 @@
  Its mini-project.
  ## Tech Stack- React,HTML,CSS, Tailwind Css, Redux, Redux Thunk, AOS, React ICON
 ## Submition-
-# Front End  Deploy - https://loginext-front-end-52hj.vercel.app/
-# Fornt End Github - https://github.com/Sachin1yadav/loginext-front-end
-# Back End Deploy - https://github.com/Sachin1yadav/loginext-server
-# JSON API - https://dent-telling-morning.glitch.me/users
-# Video Presentation - https://drive.google.com/file/d/1GVHYDtmomjcbMCFWzRhgm6Ee1PiKBPzI/view?usp=sharing
-# Project Documentation: https://docs.google.com/document/d/17cCS8jGmQ9ENiA9z_bd-Z0zDLlygKUKQtzr6SvzXCKw/edit?usp=sharing
- Deploy- https://loginext-front-end-52hj.vercel.app/
+ ## Front End  Deploy - https://loginext-front-end-52hj.vercel.app/
+ ## Fornt End Github - https://github.com/Sachin1yadav/loginext-front-end
+ ## Back End Deploy - https://github.com/Sachin1yadav/loginext-server
+ ## JSON API - https://dent-telling-morning.glitch.me/users
+ ## Video Presentation - https://drive.google.com/file/d/1GVHYDtmomjcbMCFWzRhgm6Ee1PiKBPzI/view?usp=sharing
+ ## Project Documentation: https://docs.google.com/document/d/17cCS8jGmQ9ENiA9z_bd-Z0zDLlygKUKQtzr6SvzXCKw/edit?usp=sharing
+  
 ## All User
  ![image](https://github.com/Sachin1yadav/loginext-front-end/assets/107467689/cf69de51-013b-4e90-b215-54c1c71d1c06)
 

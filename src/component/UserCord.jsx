@@ -14,13 +14,17 @@ import {
 import { MyModal } from "./MyModal";
 import EditForm from "./EditForm";
 import "../App.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { FaHeart } from "react-icons/fa";
 const UserCord = ({ user }) => {
   const dispatch = useDispatch();
   const [isDeleteModalOpen, setDeleteModalOpen] = useState(false);
   const [isEditModalOpen, setEditModalOpen] = useState(false);
   const [editedUser, setEditedUser] = useState({ ...user });
-
+  useEffect(() => {
+    AOS.init();
+  }, []);
   const handleLikeClick = () => {
     const updatedUser = { ...user, IsLink: !user.IsLink };
     dispatch(editUseraction(updatedUser));
@@ -54,7 +58,9 @@ const UserCord = ({ user }) => {
 
   return (
     <>
-      <div className="userdiv ">
+      <div  data-aos="flip-down"
+          data-aos-anchor-placement="center-bottom"
+          data-aos-duration="3000" className="userdiv ">
         <div className="userdivimg">
           <img
           

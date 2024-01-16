@@ -3,7 +3,7 @@ import React from "react";
 const EditForm = ({ user, handleInputChange }) => {
   return (
     <form>
-      <div className=" flex flex-wrap justify-start items-center ">
+      <div className=" flex flex-wrap justify-center items-center ">
         <div className="inputdiv">
           {" "}
           <label>Username:</label>

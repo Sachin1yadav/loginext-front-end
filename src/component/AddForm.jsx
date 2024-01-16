@@ -21,7 +21,7 @@ const AddForm = ({ handleAddUser, handleModalClose }) => {
   };
 
   const [formData, setFormData] = useState(initialFormData);
-
+  const [formErrors, setFormErrors] = useState({});
   const handleInputChange = (e) => {
     const { name, value } = e.target;
 
@@ -43,53 +43,87 @@ const AddForm = ({ handleAddUser, handleModalClose }) => {
       }));
     }
   };
+  const validateForm = () => {
+    const errors = {};
+    if (!formData.username.trim()) {
+      errors.username = "Username is required";
+    }
+    if (!formData.name.trim()) {
+      errors.name = "Name is required";
+    }
+    if (!formData.website.trim()) {
+      errors.website = "website is required";
+    }
+    if (!formData.email.trim()) {
+      errors.email = "Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      errors.email = "Email address is invalid";
+    }
 
+    setFormErrors(errors);
+    return Object.keys(errors).length === 0;
+  };
   const handleAddClick = () => {
-    // Assuming you want to include an "id" in the added user data
-    const id = Math.floor(Math.random() * 1000) + 1;
-    const userDataWithId = { ...formData, id };
+    if (validateForm()) {
+      // Form is valid, proceed with adding the user
+      const id = Math.floor(Math.random() * 1000) + 1;
+      const userDataWithId = { ...formData, id };
 
-    handleAddUser(userDataWithId);
-    handleModalClose();
+      handleAddUser(userDataWithId);
+      handleModalClose();
+      setFormData(initialFormData);
+    }
   };
 
   return (
     <form>
       <div className="flex flex-wrap justify-center items-center">
         <div className="inputdiv">
-          <label>Username:</label>
+          <label>Username<span className="required">*</span></label>
           <input
             type="text"
             name="username"
             placeholder="Uername"
             value={formData.username}
             onChange={handleInputChange}
+            required={true}
           />
+          {formErrors.username && (
+            <span className="error">{formErrors.username}</span>
+          )}
         </div>
         <div className="inputdiv">
-          <label>Name:</label>
+          <label>Name<span className="required">*</span></label>
           <input
             type="text"
             name="name"
             placeholder="Name"
             value={formData.name}
             onChange={handleInputChange}
+            required={true}
           />
+           {formErrors.name && (
+            <span className="error">{formErrors.name}</span>
+          )}
         </div>
         <div className="inputdiv">
-          <label>Email:</label>
+          <label>Email<span className="required">*</span></label>
           <input
-            type="text"
+            type="email"
             name="email"
             placeholder="Email"
             value={formData.email}
             onChange={handleInputChange}
+            required={true}
           />
+           {formErrors.email  && (
+            <span className="error">{formErrors.email }</span>
+          )}
         </div>
         <div className="inputdiv">
-          <label>Phone:</label>
+          <label>Phone</label>
           <input
-            type="text"
+            type="number"
             placeholder="Phone Number"
             name="phone"
             value={formData.phone}
@@ -97,14 +131,17 @@ const AddForm = ({ handleAddUser, handleModalClose }) => {
           />
         </div>
         <div className="inputdiv">
-          <label>Website:</label>
+          <label>Website<span className="required">*</span></label>
           <input
-            type="text"
+            type="url"
             name="website"
             placeholder="Website"
             value={formData.website}
             onChange={handleInputChange}
           />
+           {formErrors.website && (
+            <span className="error">{formErrors.website}</span>
+          )}
         </div>
         <div className="inputdiv">
           <label>Street:</label>
@@ -139,7 +176,7 @@ const AddForm = ({ handleAddUser, handleModalClose }) => {
         <div className="inputdiv">
           <label>Zipcode:</label>
           <input
-            type="text"
+            type="number"
             name="address.zipcode"
             placeholder="Zipcode"
             value={formData.address.zipcode}

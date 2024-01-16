@@ -1,6 +1,6 @@
 import axios from "axios";
 import { UserActionTypes } from "./Userprofile.actionType";
- 
+import { toast } from "react-toastify";
 export const getUserSuccess = (data) => ({
   type: UserActionTypes.GET_USER_SUCCESS,
   payload: data,
@@ -44,7 +44,9 @@ export const deleteUserError = (error) => ({
 export const getUsers = () => async (dispatch) => {
   dispatch({ type: UserActionTypes.GET_USER_LOADING });
   try {
-    const response = await axios.get("https://dent-telling-morning.glitch.me/users/");
+    const response = await axios.get(
+      "https://dent-telling-morning.glitch.me/users/"
+    );
     dispatch(getUserSuccess(response.data));
   } catch (error) {
     dispatch(getUserError(error.message));
@@ -54,33 +56,45 @@ export const getUsers = () => async (dispatch) => {
 export const addUser = (user) => async (dispatch) => {
   dispatch({ type: UserActionTypes.ADD_USER_LOADING });
   try {
-    const response = await axios.post("https://dent-telling-morning.glitch.me/users", user);
+    const response = await axios.post(
+      "https://dent-telling-morning.glitch.me/users",
+      user
+    );
     dispatch(addUserSuccess(response.data));
+    toast.success("User Added successfully");
   } catch (error) {
     dispatch(addUserError(error.message));
+    toast.error("Some thing went wrong");
   }
 };
 
 export const editUseraction = (user) => async (dispatch) => {
-  console.log("user",user)
+  console.log("user", user);
   dispatch({ type: UserActionTypes.EDIT_USER_LOADING });
   try {
-    const response = await axios.put(`https://dent-telling-morning.glitch.me/users/${user.id}`, user);
-    console.log("response",response)
+    const response = await axios.put(
+      `https://dent-telling-morning.glitch.me/users/${user.id}`,
+      user
+    );
+    console.log("response", response);
     dispatch(editUserSuccess(response.data));
+    toast.success("User Updated successfully");
   } catch (error) {
     dispatch(editUserError(error.message));
+    toast.error("Some thing went wrong");
   }
 };
 
 export const deleteUseraction = (userId) => async (dispatch) => {
   dispatch({ type: UserActionTypes.DELETE_USER_LOADING });
   try {
-    await axios.delete(`https://dent-telling-morning.glitch.me/users/${userId}`);
+    await axios.delete(
+      `https://dent-telling-morning.glitch.me/users/${userId}`
+    );
     dispatch(deleteUserSuccess(userId));
-    console.log("scuess")
+    toast.success("User Removed successfully");
   } catch (error) {
-    console.log("error.message",error.message)
-    dispatch(deleteUserError(error.message));
+    console.log("error.message", error.message);
+    toast.error("Some thing went wrong");
   }
 };

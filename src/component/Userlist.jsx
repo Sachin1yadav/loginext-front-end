@@ -9,6 +9,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import "../App.css";
 import Laoding from "./Loading";
+import Toaster from "./Toaster";
 
 const Userlist = () => {
   const dispatch = useDispatch();
@@ -65,6 +66,7 @@ const Userlist = () => {
           />
         )}
       />
+      <Toaster/>
     </div>
   );
 };

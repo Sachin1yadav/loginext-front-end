@@ -6,6 +6,7 @@ import { FaRegHeart } from "react-icons/fa";
 import { CiEdit } from "react-icons/ci";
 import { MdDelete } from "react-icons/md";
 import { useDispatch } from "react-redux";
+import { BsGlobe2 } from "react-icons/bs";
 import {
   deleteUseraction,
   editUseraction,
@@ -56,7 +57,8 @@ const UserCord = ({ user }) => {
       <div className="userdiv ">
         <div className="userdivimg">
           <img
-            className="w-[100px] h-[100px]  mt-auto  mb-2"
+          
+            className="userimg"
             src={`https://api.dicebear.com/7.x/pixel-art/svg?seed=${user?.username}`}
             alt=""
           />
@@ -77,7 +79,7 @@ const UserCord = ({ user }) => {
           </div>
           <div className="usercordcontact">
             <p>
-              <BsBrowserChrome />
+              <BsGlobe2 />
             </p>
             <p> {user?.website}</p>
           </div>

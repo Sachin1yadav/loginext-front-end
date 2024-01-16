@@ -43,6 +43,7 @@ input{
  height: 200px;
  margin: auto;
  border-radius: 5px;
+ 
 }
 /* flex   flex-col items-center     rounded-[5px]   m-2 */
 .userdiv{
@@ -52,7 +53,7 @@ input{
   align-items: center;
   border-radius: 5px;
  
-  width: 200px;
+  width: 250px;
 }
  
 /* relative w-[80%] min-h-screen */
@@ -60,7 +61,7 @@ input{
   position: relative;
   width: 90%;
   min-height: 100vh;
- 
+ margin-top: 50px;
 margin: auto;
 }
 /* flex flex-wrap gap-[20px] w-[100%] border-2 border-red-900 */
@@ -118,7 +119,7 @@ justify-content: center;
   padding-top: 5px;
   padding-bottom: 5px;
   margin-top: 10px;
-  border: 1px solid gray;
+  border: 1px solid rgb(205, 204, 204);
 }
  
 
@@ -140,11 +141,7 @@ justify-content: center;
 }
 .usercordactionsinglediv1 p{
   /* border-right:1px solid gray ; */
-  padding-left: 12px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  cursor: pointer;
-  padding-right: 12px;
+   
   color: red;
 }
 .usercordactionsinglediv2{
@@ -163,6 +160,7 @@ justify-content: center;
 .usercorddetails{
   width: 90%;
   align-items: center;
+  padding: 10px;
 }
 /* usercorddetails items-center w-[90%] */
 /* flex items-center text-start    gap-[10px] justify-start */
@@ -173,7 +171,15 @@ justify-content: center;
  gap: 5px;
  justify-content:flex-start ;
 }
+.addbutton2{
+  margin-left: 10px;
 
+}
+.userimg{
+   
+  height: 100%;
+  
+}
 
 .spinner {
   width: 40px;

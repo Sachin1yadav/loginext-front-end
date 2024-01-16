@@ -55,7 +55,7 @@ const AddForm = ({ handleAddUser, handleModalClose }) => {
 
   return (
     <form>
-      <div className="flex flex-wrap justify-start items-center">
+      <div className="flex flex-wrap justify-center items-center">
         <div className="inputdiv">
           <label>Username:</label>
           <input
@@ -156,13 +156,17 @@ const AddForm = ({ handleAddUser, handleModalClose }) => {
             onChange={handleInputChange}
           />
         </div>
-      </div>
+        <div className="addbutton2">
       <Button
         variant="gradient" color="green"
         onClick={handleAddClick}
       >
         Add User
       </Button>
+      </div>
+      </div>
+     
+      
      
     </form>
   );

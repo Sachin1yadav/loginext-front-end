@@ -1,3 +1,4 @@
+import { Button } from "@material-tailwind/react";
 import React, { useState } from "react";
 
 const AddForm = ({ handleAddUser, handleModalClose }) => {
@@ -8,25 +9,47 @@ const AddForm = ({ handleAddUser, handleModalClose }) => {
     phone: "",
     website: "",
     IsLink: false,
-    street: "",
-    suite: "",
-    city: "",
-    zipcode: "",
-    companyName: "",
+    address: {
+      street: "",
+      suite: "",
+      city: "",
+      zipcode: "",
+    },
+    company: {
+      name: "",
+    },
   };
 
   const [formData, setFormData] = useState(initialFormData);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
+
+    // If the property is a nested one (e.g., "address.street" or "company.name")
+    if (name.includes(".")) {
+      const [parent, child] = name.split(".");
+      setFormData((prevData) => ({
+        ...prevData,
+        [parent]: {
+          ...prevData[parent],
+          [child]: value,
+        },
+      }));
+    } else {
+      // If the property is not nested
+      setFormData((prevData) => ({
+        ...prevData,
+        [name]: value,
+      }));
+    }
   };
 
   const handleAddClick = () => {
-    handleAddUser(formData);
+    // Assuming you want to include an "id" in the added user data
+    const id = Math.floor(Math.random() * 1000) + 1;
+    const userDataWithId = { ...formData, id };
+
+    handleAddUser(userDataWithId);
     handleModalClose();
   };
 
@@ -87,9 +110,9 @@ const AddForm = ({ handleAddUser, handleModalClose }) => {
           <label>Street:</label>
           <input
             type="text"
-            name="street"
+            name="address.street"
             placeholder="Street"
-            value={formData.street}
+            value={formData.address.street}
             onChange={handleInputChange}
           />
         </div>
@@ -97,9 +120,9 @@ const AddForm = ({ handleAddUser, handleModalClose }) => {
           <label>Suite:</label>
           <input
             type="text"
-            name="suite"
+            name="address.suite"
             placeholder="Suite"
-            value={formData.suite}
+            value={formData.address.suite}
             onChange={handleInputChange}
           />
         </div>
@@ -107,9 +130,9 @@ const AddForm = ({ handleAddUser, handleModalClose }) => {
           <label>City:</label>
           <input
             type="text"
-            name="city"
+            name="address.city"
             placeholder="City"
-            value={formData.city}
+            value={formData.address.city}
             onChange={handleInputChange}
           />
         </div>
@@ -117,9 +140,9 @@ const AddForm = ({ handleAddUser, handleModalClose }) => {
           <label>Zipcode:</label>
           <input
             type="text"
-            name="zipcode"
+            name="address.zipcode"
             placeholder="Zipcode"
-            value={formData.zipcode}
+            value={formData.address.zipcode}
             onChange={handleInputChange}
           />
         </div>
@@ -127,20 +150,20 @@ const AddForm = ({ handleAddUser, handleModalClose }) => {
           <label>Company Name:</label>
           <input
             type="text"
-            name="companyName"
+            name="company.name"
             placeholder="Company Name"
-            value={formData.companyName}
+            value={formData.company.name}
             onChange={handleInputChange}
           />
         </div>
       </div>
-      <button
-        type="button"
-        className="border-2 border-black py-[10px]"
+      <Button
+        variant="gradient" color="green"
         onClick={handleAddClick}
       >
         Add User
-      </button>
+      </Button>
+     
     </form>
   );
 };

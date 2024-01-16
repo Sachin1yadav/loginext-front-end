@@ -8,7 +8,9 @@ import { MyModal } from "./MyModal";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "../App.css";
-import Laoding from "./Laoding";
+import Laoding from "./Loading";
+  
+ 
 const Userlist = () => {
   const dispatch = useDispatch();
   const [isAddModal, setIsAddModal] = useState(false);
@@ -27,8 +29,8 @@ const Userlist = () => {
   return (
     <div className="userlistmaindiv ">
        {loading ? (
-        <p><Laoding/></p>
-      ) : error ? (
+        <Laoding/>
+        ) : error ? (
         <p>Error: {error}</p>
       ) : (
         <div className="userlistdiv">
@@ -58,7 +60,7 @@ const Userlist = () => {
             handleModalClose={() => setIsAddModal(false)}
           />
         )}
-        page="Add User"
+        
       />
     </div>
   );

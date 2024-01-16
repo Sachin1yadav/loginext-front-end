@@ -1,7 +1,20 @@
 import React from "react";
-import { Button, Dialog, DialogHeader, DialogBody, DialogFooter } from "@material-tailwind/react";
+import {
+  Button,
+  Dialog,
+  DialogHeader,
+  DialogBody,
+  DialogFooter,
+} from "@material-tailwind/react";
 
-export function MyModal({ isOpen, handleOpen, action, actionName, renderContent,page }) {
+export function MyModal({
+  isOpen,
+  handleOpen,
+  action,
+  actionName,
+  renderContent,
+  page,
+}) {
   const handleConfirm = () => {
     action();
     handleOpen();
@@ -12,12 +25,18 @@ export function MyModal({ isOpen, handleOpen, action, actionName, renderContent,
       <DialogHeader>{`Confirm ${actionName}`}</DialogHeader>
       <DialogBody>{renderContent && renderContent()}</DialogBody>
       <DialogFooter>
-        <Button variant="text" color="red" onClick={handleOpen} className="mr-1">
+        <Button
+          variant="text"
+          color="red"
+          onClick={handleOpen}
+          className="mr-1"
+        >
           <span>Cancel</span>
         </Button>
-        <Button variant="gradient" color="green" onClick={handleConfirm}>
+       {page?(<Button variant="gradient" color="green" onClick={handleConfirm}>
           <span>{page}</span>
-        </Button>
+        </Button>):(null)}
+        
       </DialogFooter>
     </Dialog>
   );

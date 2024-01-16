@@ -43,7 +43,7 @@ export const deleteUserError = (error) => ({
 
 export const getUsers = () => async (dispatch) => {
   try {
-    const response = await axios.get("https://dent-telling-morning.glitch.me/users");
+    const response = await axios.get("https://dent-telling-morning.glitch.me/users/");
     dispatch(getUserSuccess(response.data));
   } catch (error) {
     dispatch(getUserError(error.message));

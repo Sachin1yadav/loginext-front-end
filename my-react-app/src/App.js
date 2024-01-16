@@ -1,6 +1,6 @@
 import React  from 'react';
 import './App.css';
-import Userlist from './component/Userlist';
+// import Userlist from './component/Userlist';
 
 function App() {
   
@@ -8,8 +8,8 @@ function App() {
   return (
     <div className="App">
        
-      <Userlist/>
-      
+      {/* <Userlist/> */} 
+      <div className="spinner"></div>
     </div>
   );
 }

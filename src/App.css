@@ -11,7 +11,7 @@
 /* Import Tailwind CSS utility styles */
 @import "tailwindcss/utilities";
 .casestudy{
-  font-size: 30px;
+  font-size: 32px;
   font-family: 'Times New Roman', Times, serif;
   font-weight: bold;
   margin: 30px;

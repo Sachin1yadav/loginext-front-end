@@ -23,7 +23,9 @@ export function MyModal({
   return (
     <Dialog open={isOpen} onClose={handleOpen}>
       <DialogHeader>{`Confirm ${actionName}`}</DialogHeader>
-      <DialogBody>{renderContent && renderContent()}</DialogBody>
+        <DialogBody style={{ maxHeight: "60vh", overflowY: "auto" }}>
+        {renderContent && renderContent()}
+      </DialogBody>
       <DialogFooter>
         <Button
           variant="text"
